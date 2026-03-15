@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import Navber from './components/navber'
 import './App.css'
+import Blogs from './components/blogs'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -9,7 +10,7 @@ function App() {
     <>
    <Navber></Navber>
 
-  
+  <Blogs></Blogs>
 
 
 
