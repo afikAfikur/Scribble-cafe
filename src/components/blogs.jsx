@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import Blog from "./blog";
-const Blogs = ({ setBlogCount }) => {
+const Blogs = ({ setBlogCount,bokish,reading,bad }) => {
   const [datahere, setDatahere] = useState([]);
 
   useEffect(() => {
@@ -16,7 +16,7 @@ const Blogs = ({ setBlogCount }) => {
   }, []);
 
   return <div>
-    <Blog datahere={datahere}></Blog>
+    <Blog bad={bad} reading={reading} bokish={bokish}  datahere={datahere}></Blog>
   </div>;
 };
 
