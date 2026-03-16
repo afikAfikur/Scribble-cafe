@@ -23,7 +23,10 @@ function App() {
   const bad=(value)=>{
     const filtered=books.filter((el)=>el!==value);
     setBooks(filtered)
-    setBookmarkcount(bookmarkcount-1);
+    if(bookmarkcount>0){
+
+      setBookmarkcount(bookmarkcount-1)
+    }
   }
   return (
     <>
