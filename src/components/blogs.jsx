@@ -1,18 +1,23 @@
 import { useEffect, useState } from "react";
-
-const Blogs = () => {
+import Blog from "./blog";
+const Blogs = ({ setBlogCount }) => {
   const [datahere, setDatahere] = useState([]);
+
   useEffect(() => {
     const loaddata = async () => {
       const res = await fetch("blogs.json");
       const data = await res.json();
-      setDatahere([...datahere,data])
+
+      setDatahere(data);
+      setBlogCount(data.length);
     };
-    loaddata()
-    
+
+    loaddata();
   }, []);
-const value=datahere[0]
-console.log(value)
-  return <div></div>;
+
+  return <div>
+    <Blog datahere={datahere}></Blog>
+  </div>;
 };
+
 export default Blogs;
